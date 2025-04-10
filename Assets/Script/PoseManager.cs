@@ -10,6 +10,7 @@ public class PoseManager : MonoBehaviour {
 
     public struct PoseData {
         string poseName;
+        //rotatelist?
 
     }
     private List<Quaternion> jointDataList = new List<Quaternion>();

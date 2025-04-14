@@ -30,6 +30,12 @@ public class PoseManager : MonoBehaviour {
             return;
         }
 
+        bool exists = poseLibrary.poses.Exists(p => p.name == newPoseName);
+        if (exists) {
+            Debug.LogError($"Pose名 '{newPoseName}' はすでに存在します！");
+            return;
+        }
+
         Pose pose = new Pose(newPoseName);
         foreach (var joint in joints) {
             pose.AddJointRotation(joint.localRotation);

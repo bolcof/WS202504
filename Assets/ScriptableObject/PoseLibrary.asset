@@ -12,4 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6e3ae045bc4a4c4d955521402d0cae9, type: 3}
   m_Name: PoseLibrary
   m_EditorClassIdentifier: 
-  poses: []
+  poses:
+  - name: Neutral
+    jointDatas:
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: -0, y: -0, z: -0, w: 1}
+    - {x: -0, y: -0, z: -0, w: 1}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: 0.69465834, w: 0.71933985}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: 0, w: 1}
+    - {x: 0, y: 0, z: 0.69465834, w: 0.71933985}
+    - {x: 0.30070576, y: 0, z: 0, w: 0.953717}
+    - {x: -0, y: -0, z: -0, w: 1}
+    - {x: -0, y: -0, z: -0, w: 1}
+    - {x: -0.30070576, y: 0, z: 0, w: 0.953717}
+    - {x: -0, y: -0, z: -0, w: 1}
+    - {x: -0, y: -0, z: -0, w: 1}

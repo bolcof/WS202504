@@ -204,7 +204,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a804a85a42c8f45c99badeb77ecc75d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joints: []
+  joints:
+  - {fileID: 6483121268907328768}
+  - {fileID: 8316216829073620273}
+  - {fileID: 6146159076023329463}
+  - {fileID: 3001633732579516056}
+  - {fileID: 6921334176446124151}
+  - {fileID: 2641829763804555717}
+  - {fileID: 7999058733240039614}
+  - {fileID: 6960485016010474156}
+  - {fileID: 3231349867083998875}
+  - {fileID: 2013104188929431149}
+  - {fileID: 4686437381884573860}
+  - {fileID: 5127302948902474404}
+  - {fileID: 5604208401469223465}
+  - {fileID: 5483838480014006553}
+  - {fileID: 4170854216063797127}
   poseLibrary: {fileID: 11400000, guid: 052be569254c74d7e9f13472184a49da, type: 2}
 --- !u!4 &185476824
 Transform:
@@ -1032,6 +1047,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   boxVisibleButtonLabel: {fileID: 1796124893}
+  poseNameInput: {fileID: 861799850}
 --- !u!114 &531420856
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1697,7 +1713,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1042510152}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 531420855}
+        m_TargetAssemblyTypeName: UIbehaviour, Assembly-CSharp
+        m_MethodName: PushSavePose
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1042510152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5269,7 +5297,7 @@ GameObject:
   - component: {fileID: 6633410312565198947}
   - component: {fileID: 6056341187812800595}
   m_Layer: 0
-  m_Name: "Joint:\u53F3\u624B"
+  m_Name: "Joint:\u5DE6\u624B"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5575,7 +5603,7 @@ GameObject:
   - component: {fileID: 4139510334838457731}
   - component: {fileID: 575463690116634477}
   m_Layer: 0
-  m_Name: "Joint:\u53F3\u8098"
+  m_Name: "Joint:\u5DE6\u8098"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,12 +6,27 @@ using TMPro;
 
 public class PoseManager : MonoBehaviour {
 
+    public static PoseManager instance;
+
     public List<Transform> joints;
     public PoseLibrary poseLibrary; // 保存先（ScriptableObject）
+    private void Awake() {
+        if (instance == null) {
+            instance = this;
+            DontDestroyOnLoad(gameObject);
+        } else {
+            Destroy(gameObject);
+        }
+    }
 
-    public void PushSavePose(string newPoseName) {
+    public void SavePose(string newPoseName) {
         if (poseLibrary == null) {
             Debug.LogError("PoseLibraryがアサインされていません！");
+            return;
+        }
+
+        if(newPoseName == "") {
+            Debug.LogError("PoseNameが設定されていません！");
             return;
         }
 

@@ -24,4 +24,8 @@ public class UIbehaviour : MonoBehaviour {
     public void PushSavePose() {
         PoseManager.instance.SavePose(poseNameInput.text);
     }
+
+    public void PushLoadPose(string poseName) {
+        PoseManager.instance.LoadPose(poseName);
+    }
 }

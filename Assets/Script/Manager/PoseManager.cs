@@ -49,4 +49,27 @@ public class PoseManager : MonoBehaviour {
         UnityEditor.AssetDatabase.SaveAssets();          // 保存
 #endif
     }
+    public void LoadPose(string poseName) {
+        if (poseLibrary == null) {
+            Debug.LogError("PoseLibraryがアサインされていません！");
+            return;
+        }
+
+        Pose pose = poseLibrary.poses.Find(p => p.name == poseName);
+        if (pose == null) {
+            Debug.LogError($"Pose名 '{poseName}' が見つかりません！");
+            return;
+        }
+
+        if (pose.jointDatas.Count != joints.Count) {
+            Debug.LogWarning($"PoseデータのJoint数（{pose.jointDatas.Count}）と現在のJoint数（{joints.Count}）が一致していません！");
+        }
+
+        int count = Mathf.Min(joints.Count, pose.jointDatas.Count);
+        for (int i = 0; i < count; i++) {
+            joints[i].localRotation = pose.jointDatas[i];
+        }
+
+        Debug.Log($"Pose '{poseName}' を読み込み適用しました。");
+    }
 }

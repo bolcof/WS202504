@@ -6,11 +6,17 @@ using TMPro;
 public class UIbehaviour : MonoBehaviour {
     [SerializeField] private TMP_Text boxVisibleButtonLabel;
     [SerializeField] private TMP_InputField poseNameInput;
+    [SerializeField] private GameObject exportedPanel;
+
+    private void Start() {
+        exportedPanel.SetActive(false);
+    }
 
     public void PushExportModel() {
         PlayerPrefs.SetInt("AutoExportRequest", 1);
         PlayerPrefs.Save();
         Debug.Log("エクスポートリクエストを記録（再生終了時に実行）");
+        exportedPanel.SetActive(true);
     }
 
     public void PushBoxVisible() {

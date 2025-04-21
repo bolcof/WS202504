@@ -1,0 +1,43 @@
+Project Name: Low Poly Safety Cone
+Created by: Kris Pyatt
+
+Description
+-------------------------------------------------------------
+-low poly Safety Cone ready for games
+-Created with Blender 3.0 and rendered with Cycles, and Eeve Render Engine
+-All Textures and materials are applied.
+-no N-gons polygons, modelled with quads only.
+-no errors or missing files on opening project file.
+- measurement used meters
+-Object Origin: Location - X = 0
+                           Y = 0
+                           Z = 0
+                Rotation - X = 0
+                           Y = 0
+                           Z = 0
+                Scale    - X = 1
+                           Y = 1
+                           Z = 1
+
+Tris=250
+Verts=139
+Faces=125
+
+Formtas
+------------------------------------------------------------------
+comes with 2 formats
+1-Blend
+2-obj
+
+
+Texture
+--------------------------------------------------------------------
+Textures Resolution 1024 x 1024 PNG format:
+Safety_Cone_Bump.png
+Safety_Cone_Ruff.png
+Safety_Cone_Spec.png
+Safety_Cone_Deff.png
+
+Please rate my models!
+
+Thanks, Kris Pyatt

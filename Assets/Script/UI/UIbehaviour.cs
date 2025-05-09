@@ -14,6 +14,7 @@ public class UIbehaviour : MonoBehaviour {
     private void Start() {
         exportedPanel.SetActive(false);
         isPausing = false;
+        boxVisibleButtonLabel.text = "Base:OFF";
         stopButtonLabel.text = "Pause";
     }
 
@@ -25,10 +26,10 @@ public class UIbehaviour : MonoBehaviour {
     }
 
     public void PushBoxVisible() {
-        if (ModelManager.instance.ChangeBoxesVisble()) {
-            boxVisibleButtonLabel.text = "BOX:ON";
+        if (ModelManager.instance.ChangeBaseModelVisble()) {
+            boxVisibleButtonLabel.text = "Base:ON";
         } else {
-            boxVisibleButtonLabel.text = "BOX:OFF";
+            boxVisibleButtonLabel.text = "Base:OFF";
         }
     }
 

@@ -27,6 +27,10 @@ public class UIbehaviour : MonoBehaviour {
         }
     }
 
+    public void PushNextAnimation() {
+        AnimationStateController.instance.AdvanceAnimation();
+    }
+
     public void PushSavePose() {
         PoseManager.instance.SavePose(poseNameInput.text);
     }

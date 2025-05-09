@@ -10,6 +10,7 @@ public class PoseManager : MonoBehaviour {
 
     public List<Transform> joints;
     public PoseLibrary poseLibrary; // 保存先（ScriptableObject）
+
     private void Awake() {
         if (instance == null) {
             instance = this;

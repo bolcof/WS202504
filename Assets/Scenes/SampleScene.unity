@@ -2211,7 +2211,7 @@ GameObject:
   - component: {fileID: 1414619371}
   - component: {fileID: 1414619370}
   m_Layer: 5
-  m_Name: NextAnimationButton (1)
+  m_Name: StopAnimationButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3059,8 +3059,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 531420855}
         m_TargetAssemblyTypeName: UIbehaviour, Assembly-CSharp
-        m_MethodName: PushLoadPose
-        m_Mode: 5
+        m_MethodName: PushNextAnimation
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine

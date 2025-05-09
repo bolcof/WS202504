@@ -8,8 +8,13 @@ public class UIbehaviour : MonoBehaviour {
     [SerializeField] private TMP_InputField poseNameInput;
     [SerializeField] private GameObject exportedPanel;
 
+    [SerializeField] private TMP_Text stopButtonLabel;
+    private bool isPausing;
+
     private void Start() {
         exportedPanel.SetActive(false);
+        isPausing = false;
+        stopButtonLabel.text = "Pause";
     }
 
     public void PushExportModel() {
@@ -29,6 +34,17 @@ public class UIbehaviour : MonoBehaviour {
 
     public void PushNextAnimation() {
         AnimationStateController.instance.AdvanceAnimation();
+    }
+
+    public void PushPauseAnimation() {
+        if (isPausing) {
+            AnimationStateController.instance.ResumeAnimation();
+            stopButtonLabel.text = "Pause";
+        } else {
+            AnimationStateController.instance.PauseAnimation();
+            stopButtonLabel.text = "Resume";
+        }
+        isPausing = !isPausing;
     }
 
     public void PushSavePose() {

@@ -25,4 +25,12 @@ public class AnimationStateController : MonoBehaviour {
         animator.SetInteger("stateIndex", currentIndex);
         Debug.Log($"アニメーション遷移: {currentIndex}");
     }
+
+    public void PauseAnimation() {
+        animator.speed = 0f;
+    }
+
+    public void ResumeAnimation() {
+        animator.speed = 1.0f;
+    }
 }

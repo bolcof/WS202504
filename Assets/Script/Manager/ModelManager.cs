@@ -5,8 +5,8 @@ using UnityEngine;
 public class ModelManager : MonoBehaviour {
     public static ModelManager instance;
 
-    private bool sampleBoxesVisibled = true;
-    [SerializeField] private List<GameObject> sampleBoxes = new List<GameObject>();
+    private bool baseVisible = true;
+    [SerializeField] private SkinnedMeshRenderer jointMesh, modelMesh;
 
     private void Awake() {
         if (instance == null) {
@@ -17,11 +17,10 @@ public class ModelManager : MonoBehaviour {
         }
     }
 
-    public bool ChangeBoxesVisble() {
-        sampleBoxesVisibled = !sampleBoxesVisibled;
-        foreach (GameObject go in sampleBoxes) {
-            go.SetActive(sampleBoxesVisibled);
-        }
-        return sampleBoxesVisibled;
+    public bool ChangeBaseModelVisble() {
+        baseVisible = !baseVisible;
+        jointMesh.enabled = baseVisible;
+        modelMesh.enabled = baseVisible;
+        return baseVisible;
     }
 }

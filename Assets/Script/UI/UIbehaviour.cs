@@ -19,7 +19,8 @@ public class UIbehaviour : MonoBehaviour {
     }
 
     public void PushExportModel() {
-        PlayerPrefs.SetInt("AutoExportRequest", 1);
+        //PlayerPrefs.SetInt("AutoExportRequest", 1);
+        PlayerPrefs.SetInt("ExportFBXRequest", 1);
         PlayerPrefs.Save();
         Debug.Log("エクスポートリクエストを記録（再生終了時に実行）");
         exportedPanel.SetActive(true);

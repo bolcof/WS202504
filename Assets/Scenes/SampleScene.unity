@@ -995,11 +995,15 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5866666021909216657, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: cb97949bd0a4743b68f6a03a51f037b0, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
-    - targetCorrespondingSourceObject: {fileID: -6803169544883306252, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
-      insertIndex: -1
+    - targetCorrespondingSourceObject: {fileID: -1812909498023395591, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
+      insertIndex: 0
       addedObject: {fileID: 1481500765}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
@@ -1029,11 +1033,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animator: {fileID: 438762561}
---- !u!4 &438762563 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -6803169544883306252, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
-  m_PrefabInstance: {fileID: 438762559}
-  m_PrefabAsset: {fileID: 0}
 --- !u!137 &438762564 stripped
 SkinnedMeshRenderer:
   m_CorrespondingSourceObject: {fileID: 5822821947120931875, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
@@ -1305,6 +1304,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!4 &546624041 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1812909498023395591, guid: 44a0c0a19aaf04644841faa6928b98f9, type: 3}
+  m_PrefabInstance: {fileID: 438762559}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &671469899
 GameObject:
   m_ObjectHideFlags: 0
@@ -2524,12 +2528,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1481500764}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.6024992, y: -0.40407005, z: -0.47064403, w: 0.50221145}
-  m_LocalPosition: {x: 0.083, y: 0.516, z: -0.007}
-  m_LocalScale: {x: 0.35199997, y: 0.35200003, z: 0.35200003}
+  m_LocalRotation: {x: -0.55274445, y: -0.45852435, z: -0.42227817, w: 0.5530914}
+  m_LocalPosition: {x: 0.0034539474, y: 0.12158039, z: 0.0013277687}
+  m_LocalScale: {x: 0.35200003, y: 0.35200003, z: 0.352}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 438762563}
+  m_Father: {fileID: 546624041}
   m_LocalEulerAnglesHint: {x: -80.235, y: 108.05, z: -184.795}
 --- !u!23 &1481500766
 MeshRenderer:

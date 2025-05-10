@@ -14,8 +14,8 @@ public class UIbehaviour : MonoBehaviour {
     private void Start() {
         exportedPanel.SetActive(false);
         isPausing = false;
-        boxVisibleButtonLabel.text = "Base:OFF";
-        stopButtonLabel.text = "Pause";
+        boxVisibleButtonLabel.text = "ベースを非表示";
+        stopButtonLabel.text = "一時停止";
     }
 
     public void PushExportModel() {
@@ -28,9 +28,9 @@ public class UIbehaviour : MonoBehaviour {
 
     public void PushBoxVisible() {
         if (ModelManager.instance.ChangeBaseModelVisble()) {
-            boxVisibleButtonLabel.text = "Base:ON";
+            boxVisibleButtonLabel.text = "ベースを非表示";
         } else {
-            boxVisibleButtonLabel.text = "Base:OFF";
+            boxVisibleButtonLabel.text = "ベースを表示";
         }
     }
 
@@ -41,10 +41,10 @@ public class UIbehaviour : MonoBehaviour {
     public void PushPauseAnimation() {
         if (isPausing) {
             AnimationStateController.instance.ResumeAnimation();
-            stopButtonLabel.text = "Pause";
+            stopButtonLabel.text = "一時停止";
         } else {
             AnimationStateController.instance.PauseAnimation();
-            stopButtonLabel.text = "Resume";
+            stopButtonLabel.text = "再生";
         }
         isPausing = !isPausing;
     }

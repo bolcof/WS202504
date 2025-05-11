@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: FbxExportSettings
   m_EditorClassIdentifier: 
   fbxOutputDirectory: /Users/244cm265kg/Documents/WStest2
-  fbxFileName: ExportedPackage4
+  fbxFileName: SampleFbx

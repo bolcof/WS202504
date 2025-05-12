@@ -42,16 +42,6 @@ public static class FbxExportOnPlayExit {
                     string fullPath = Path.Combine(folder, baseName + ".fbx");
                     ModelExporter.ExportObject(fullPath, target);
 
-                    string sourceModelsPath = Path.Combine(Application.dataPath, "Models");
-                    string destModelsPath = Path.Combine(folder, "Models");
-
-                    if (Directory.Exists(sourceModelsPath)) {
-                        CopyDirectory(sourceModelsPath, destModelsPath);
-                        Debug.Log($"📁 Modelsフォルダをコピー完了: {destModelsPath}");
-                    } else {
-                        Debug.LogWarning("Assets/Models フォルダが見つかりませんでした。コピーをスキップします。");
-                    }
-
                     fullPath = Path.Combine(exportFolderInAssets, baseName + ".fbx");
                     ModelExporter.ExportObject(fullPath, target);
 
@@ -60,6 +50,19 @@ public static class FbxExportOnPlayExit {
                     Debug.LogError("GameObject 'Human' が見つかりませんでした。");
                 }
             }
+        }
+    }
+
+    public static void OnCallCopyModel() {
+        string folder = settings.fbxOutputDirectory;
+        string sourceModelsPath = Path.Combine(Application.dataPath, "Models");
+        string destModelsPath = Path.Combine(folder, "Models");
+
+        if (Directory.Exists(sourceModelsPath)) {
+            CopyDirectory(sourceModelsPath, destModelsPath);
+            Debug.Log($"📁 Modelsフォルダをコピー完了: {destModelsPath}");
+        } else {
+            Debug.LogWarning("Assets/Models フォルダが見つかりませんでした。コピーをスキップします。");
         }
     }
 

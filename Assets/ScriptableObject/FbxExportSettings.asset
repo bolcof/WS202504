@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b2e214cdb5be7499b99afaf8f7f10144, type: 3}
   m_Name: FbxExportSettings
   m_EditorClassIdentifier: 
-  fbxOutputDirectory: /Users/244cm265kg/Documents/WStest2
-  fbxFileName: SampleFbx
+  fbxOutputDirectory: /Users/244cm265kg/Documents/WStest03
+  participantName: Kanai
+  fbxFileName: SampleFbx01

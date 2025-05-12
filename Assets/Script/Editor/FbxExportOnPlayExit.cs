@@ -5,7 +5,7 @@ using UnityEngine;
 using System.IO;
 
 [InitializeOnLoad]
-public static class FbxExportOnPlayExit {
+public static class ExportOnPlayExit {
     private const string rootObjectName = "Human";
 
     // デフォルト値（起動時にEditorPrefsから読み込まれる）
@@ -13,7 +13,7 @@ public static class FbxExportOnPlayExit {
 
     static FbxExportSettings settings;
 
-    static FbxExportOnPlayExit() {
+    static ExportOnPlayExit() {
         EditorApplication.playModeStateChanged += OnPlayModeChanged;
         LoadSettings();
     }
@@ -30,6 +30,12 @@ public static class FbxExportOnPlayExit {
 
     static void OnPlayModeChanged(PlayModeStateChange state) {
         if (state == PlayModeStateChange.EnteredEditMode) {
+            if (PlayerPrefs.GetInt("ExportModelRequest", 0) == 1) {
+                PlayerPrefs.SetInt("ExportModelRequest", 0);
+                PlayerPrefs.Save();
+                CopyModels();
+            }
+
             if (PlayerPrefs.GetInt("ExportFBXRequest", 0) == 1) {
                 PlayerPrefs.SetInt("ExportFBXRequest", 0);
                 PlayerPrefs.Save();
@@ -39,17 +45,46 @@ public static class FbxExportOnPlayExit {
                     string folder = settings.fbxOutputDirectory;
                     string baseName = Path.GetFileNameWithoutExtension(settings.fbxFileName);
 
-                    string fullPath = Path.Combine(folder, baseName + ".fbx");
+                    string fullPath = Path.Combine(folder, baseName + "_" + settings.participantName + ".fbx");
                     ModelExporter.ExportObject(fullPath, target);
 
                     fullPath = Path.Combine(exportFolderInAssets, baseName + ".fbx");
                     ModelExporter.ExportObject(fullPath, target);
 
-                    Debug.Log($"✅ FBX書き出し完了: {fullPath}");
+                    Debug.Log($"FBX書き出し完了: {fullPath}");
                 } else {
                     Debug.LogError("GameObject 'Human' が見つかりませんでした。");
                 }
             }
+        }
+    }
+
+    public static void CopyModels() {
+        string folder = settings.fbxOutputDirectory;
+        string sourceModelsPath = Path.Combine(Application.dataPath, "Models");
+        string destModelsPath = Path.Combine(folder, "Models_" + settings.participantName);
+
+        if (Directory.Exists(sourceModelsPath)) {
+            CopyDirectory(sourceModelsPath, destModelsPath);
+            Debug.Log($"Modelsフォルダをコピー完了: {destModelsPath}");
+        } else {
+            Debug.LogWarning("Assets/Models フォルダが見つかりませんでした。コピーをスキップします。");
+        }
+    }
+
+    static void CopyDirectory(string sourceDir, string destDir) {
+        if (!Directory.Exists(destDir)) {
+            Directory.CreateDirectory(destDir);
+        }
+
+        foreach (var file in Directory.GetFiles(sourceDir)) {
+            string destFile = Path.Combine(destDir, Path.GetFileName(file));
+            File.Copy(file, destFile, overwrite: true);
+        }
+
+        foreach (var subDir in Directory.GetDirectories(sourceDir)) {
+            string destSubDir = Path.Combine(destDir, Path.GetFileName(subDir));
+            CopyDirectory(subDir, destSubDir);
         }
     }
 }

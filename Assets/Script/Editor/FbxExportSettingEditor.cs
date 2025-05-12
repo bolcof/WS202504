@@ -8,7 +8,8 @@ public class FbxExportSettingsEditor : Editor {
         serializedObject.Update();
 
         SerializedProperty dirProp = serializedObject.FindProperty("fbxOutputDirectory");
-        SerializedProperty nameProp = serializedObject.FindProperty("fbxFileName");
+        SerializedProperty nameProp = serializedObject.FindProperty("participantName");
+        SerializedProperty fileNameProp = serializedObject.FindProperty("fbxFileName");
 
         // フォルダ選択UI
         EditorGUILayout.LabelField("Fbx Output Directory", EditorStyles.boldLabel);
@@ -22,8 +23,10 @@ public class FbxExportSettingsEditor : Editor {
         }
         EditorGUILayout.EndHorizontal();
 
-        // ファイル名入力欄
+        // 参加者名入力欄
         EditorGUILayout.PropertyField(nameProp);
+        // ファイル名入力欄
+        EditorGUILayout.PropertyField(fileNameProp);
 
         serializedObject.ApplyModifiedProperties();
     }
